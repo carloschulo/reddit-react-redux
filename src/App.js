@@ -21,7 +21,7 @@ class App extends Component {
       this.setState({
         data: data.data.children
       });
-      // console.log(data.data.children);
+      console.log(data.data.children);
     });
   }
   handleAdd(id, url, title) {
@@ -50,6 +50,7 @@ class App extends Component {
               })
             : <h1>Loading</h1>}
         </div>
+        
         <div className="column">
           <Container width={350} height={400} position="fixed">
             <h1>My Favorites:</h1>
@@ -60,7 +61,7 @@ class App extends Component {
                   <div key={id}>
                  <strong>{index + 1}) </strong> 
                   <a href={`https://www.reddit.com`+link} target="_blank">{title}</a>
-                    <button onClick={() => this.handleDelete(id)}>x</button>
+                    <button className="btn btn-danger" onClick={() => this.handleDelete(id)}>x</button>
                   </div>
                 );
               })}

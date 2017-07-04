@@ -24,13 +24,13 @@ const Post = ({ post, index, handleDelete, handleAdd }) => {
         </div>
       </div>
       <div className="row">
-        {post.data.thumbnail ? <img src={post.data.thumbnail} alt="" /> : null}
+        {post.data.thumbnail_height ? <img src={post.data.thumbnail} alt="" /> : null}
       </div>
       
-      <button onClick={() => handleAdd(post.data.id, post.data.permalink, post.data.title)}>
+      <button className="btn btn-primary" onClick={() => handleAdd(post.data.id, post.data.permalink, post.data.title)}>
         Add to Favorites
       </button>
-      <button onClick={() => handleDelete(post.data.id)}>
+      <button className="btn btn-danger" onClick={() => handleDelete(post.data.id)}>
         Delete From Favorites
       </button>
     </div>

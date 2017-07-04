@@ -4,3 +4,7 @@ body {
   /*font-family: sans-serif;*/
   background: #fafafa;
 }
+
+button {
+  margin: 3px;
+}
