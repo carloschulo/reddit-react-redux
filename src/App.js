@@ -51,13 +51,14 @@ class App extends Component {
             : <h1>Loading</h1>}
         </div>
         <div className="column">
-          <Container width={350} position="fixed">
+          <Container width={350} height={400} position="fixed">
             <h1>My Favorites:</h1>
             <div>
               {
-              this.props.favorites.map(({ id, link, title }) => {
+              this.props.favorites.map(({ id, link, title }, index) => {
                 return (
                   <div key={id}>
+                 <strong>{index + 1}) </strong> 
                   <a href={`https://www.reddit.com`+link} target="_blank">{title}</a>
                     <button onClick={() => this.handleDelete(id)}>x</button>
                   </div>

@@ -10,9 +10,10 @@
 }
 
 .App .row{
-  display: flex;
-  flex-direction: row;
+  /*display: flex;
+  flex-direction: row;*/
   margin-bottom: 5px;
+  margin-left: 0 !important;
 }
 h1,
 h2,

@@ -1,9 +1,12 @@
 .container {
   height: 200px;
   width: 500px;
-  border: 1px solid #333;
+  /*border: 1px solid #333;*/
   margin: 5px;
   padding: 5px;
   /*display: flex;
   flex-direction: column;*/
+  overflow-y: scroll;
+   background: #fff;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08);
 }
