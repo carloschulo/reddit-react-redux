@@ -21,7 +21,7 @@ class App extends Component {
       this.setState({
         data: data.data.children
       });
-      console.log(data.data.children);
+      // console.log(data.data.children);
     });
   }
   handleAdd(id, url, title) {
@@ -54,11 +54,11 @@ class App extends Component {
           <Container width={350} position="fixed">
             <h1>My Favorites:</h1>
             <div>
-              {// Object.keys(this.props.favorites)
+              {
               this.props.favorites.map(({ id, link, title }) => {
                 return (
                   <div key={id}>
-                    {title}
+                  <a href={`https://www.reddit.com`+link} target="_blank">{title}</a>
                     <button onClick={() => this.handleDelete(id)}>x</button>
                   </div>
                 );
