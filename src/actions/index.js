@@ -1,11 +1,12 @@
 export const ADD_FAV = "ADD_FAV";
 export const DELETE_FAV = "DELETE_FAV";
 
-export function addFav(id, link) {
+export function addFav(id, link, title) {
   return {
     type: ADD_FAV,
     id,
-    link
+    link,
+    title
   };
 }
 

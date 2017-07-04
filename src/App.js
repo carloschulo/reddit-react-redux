@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Container } from "./components";
+import { Container, Post } from "./components";
 import axios from "axios";
 import "./App.css";
 
@@ -24,8 +24,8 @@ class App extends Component {
       console.log(data.data.children);
     });
   }
-  handleAdd(id, url) {
-    this.props.addFav(id, url);
+  handleAdd(id, url, title) {
+    this.props.addFav(id, url, title);
   }
   handleDelete(id) {
     this.props.deleteFav(id);
@@ -34,38 +34,37 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="">
+        <div className="column">
           {this.state.data
             ? this.state.data.map((post, index) => {
-                // console.log(post.data);
                 return (
-                  <Container key={post.data.id}>
-                    <div className="row">
-                      <strong>
-                        {index + 1}.{" "}
-                      </strong>
-                      <span>
-                        <strong>
-                          {" "}{post.data.title}
-                        </strong>
-                      </span>
-                    </div>
-                    <div className="row">
-                      {post.data.ups} Upvotes
-                    </div>
-                    <button
-                      onClick={() =>
-                        this.handleAdd(post.data.id, post.data.permalink)}
-                    >
-                      Add to Favorites
-                    </button>
-                    <button onClick={() => this.handleDelete(post.data.id)}>
-                      Delete From Favorites
-                    </button>
+                  <Container key={post.data.id} height={250} width={650}>
+                    <Post
+                      post={post}
+                      index={index}
+                      handleDelete={this.handleDelete}
+                      handleAdd={this.handleAdd}
+                    />
                   </Container>
                 );
               })
-            : null}
+            : <h1>Loading</h1>}
+        </div>
+        <div className="column">
+          <Container width={350} position="fixed">
+            <h1>My Favorites:</h1>
+            <div>
+              {// Object.keys(this.props.favorites)
+              this.props.favorites.map(({ id, link, title }) => {
+                return (
+                  <div key={id}>
+                    {title}
+                    <button onClick={() => this.handleDelete(id)}>x</button>
+                  </div>
+                );
+              })}
+            </div>
+          </Container>
         </div>
       </div>
     );

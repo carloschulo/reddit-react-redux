@@ -1,3 +1,14 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+}
+
+.App .column {
+  display: flex;
+  flex-direction: column;
+}
+
 .App .row{
   display: flex;
   flex-direction: row;

@@ -5,7 +5,8 @@ export default (state = [], action) => {
     case ADD_FAV:
       return [...state, {
         id: action.id,
-        link: action.url
+        link: action.link,
+        title: action.title
       }]
     case DELETE_FAV:
       return state.filter(fav => fav.id !== action.id)
