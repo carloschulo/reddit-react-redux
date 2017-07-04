@@ -8,7 +8,7 @@ export default (state = [], action) => {
         link: action.url
       }]
     case DELETE_FAV:
-      return state
+      return state.filter(fav => fav.id !== action.id)
     default:
       return state
   }

@@ -10,6 +10,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.handleAdd = this.handleAdd.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+
     this.state = {
       data: null
     };
@@ -22,8 +24,11 @@ class App extends Component {
       console.log(data.data.children);
     });
   }
-  handleAdd(id, url){
-    this.props.addFav(id, url)
+  handleAdd(id, url) {
+    this.props.addFav(id, url);
+  }
+  handleDelete(id) {
+    this.props.deleteFav(id);
   }
 
   render() {
@@ -47,9 +52,16 @@ class App extends Component {
                     </div>
                     <div className="row">
                       {post.data.ups} Upvotes
-                     
                     </div>
-                    <button onClick={()=> this.handleAdd(post.data.id, post.data.permalink)}>Add to Favorites</button>
+                    <button
+                      onClick={() =>
+                        this.handleAdd(post.data.id, post.data.permalink)}
+                    >
+                      Add to Favorites
+                    </button>
+                    <button onClick={() => this.handleDelete(post.data.id)}>
+                      Delete From Favorites
+                    </button>
                   </Container>
                 );
               })
