@@ -9,4 +9,12 @@ const Container = (props) => {
   );
 };
 
+Container.propTypes = {
+  width: React.PropTypes.number,
+  height: React.PropTypes.number,
+  position: React.PropTypes.string,
+  children: React.PropTypes.node
+}
+
+
 export default Container;

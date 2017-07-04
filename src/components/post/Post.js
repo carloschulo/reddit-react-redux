@@ -37,4 +37,11 @@ const Post = ({ post, index, handleDelete, handleAdd }) => {
   );
 };
 
+Post.propTypes = {
+  post: React.PropTypes.object.isRequired,
+  index: React.PropTypes.number.isRequired,
+  handleDelete: React.PropTypes.func.isRequired,
+  handleAdd: React.PropTypes.func.isRequired,
+}
+
 export default Post;
