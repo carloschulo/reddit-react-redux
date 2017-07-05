@@ -30,9 +30,9 @@ const Post = ({ post, index, handleDelete, handleAdd }) => {
       <button className="btn btn-primary" onClick={() => handleAdd(post.data.id, post.data.permalink, post.data.title)}>
         Add to Favorites
       </button>
-      <button className="btn btn-danger" onClick={() => handleDelete(post.data.id)}>
+      {/*<button className="btn btn-danger" onClick={() => handleDelete(post.data.id)}>
         Delete From Favorites
-      </button>
+      </button>*/}
     </div>
   );
 };
